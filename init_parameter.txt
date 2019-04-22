@@ -4,4 +4,4 @@
 f 
 47 
 /home/npcdna/图片/mynteye_calibration_right/pict/
-//10*9棋盘格，每格10cm长，针孔模型p，鱼眼用f，24张图片，图片位置
+//10*9棋盘格，每格100mm长，针孔模型p，鱼眼用f，47张图片，图片位置

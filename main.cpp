@@ -19,7 +19,7 @@ struct init_parameter
   //棋盘
   int chess_row;
   int chess_col;
-  int square_length;//cm
+  int square_length;//mm
 
   int picture_number;
   int model;//pin_hole 1;fish_eye 2;
