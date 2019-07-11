@@ -84,16 +84,36 @@ int main()
 
     print_parameter(camera);//打印初始参数
 
-
-    for(int i=0;i<camera.picture_number;i++)
+    if(camera.picture_number < 10)
     {
-        string pict_src=camera.picture_src+"left-00"+to_string(i)+".png";//随图片格式改,0 start
-        //string pict_src=camera.picture_src+to_string(i+1)+".jpg";//随图片格式改
-        Mat p=imread(pict_src,IMREAD_COLOR);
-        //cout<<p.size()<<endl;
+        for(int i=0;i<camera.picture_number;i++)
+        {
+            string pict_src=camera.picture_src+"left-000"+to_string(i)+".png";//随图片格式改,0 start
+            //string pict_src=camera.picture_src+to_string(i+1)+".jpg";//随图片格式改
+            Mat p=imread(pict_src,IMREAD_COLOR);
+            //cout<<p.size()<<endl;
+            image_raw.push_back(p);//放入未标定图片
+        }
+    }
+    else
+    {
+        for(int i=0;i<10;i++)
+        {
+            string pict_src=camera.picture_src+"left-000"+to_string(i)+".png";//随图片格式改,0 start
+            //string pict_src=camera.picture_src+to_string(i+1)+".jpg";//随图片格式改
+            Mat p=imread(pict_src,IMREAD_COLOR);
+            //cout<<p.size()<<endl;
+            image_raw.push_back(p);//放入未标定图片
 
-        image_raw.push_back(p);//放入未标定图片
-
+        }
+        for (int i = 10; i < camera.picture_number; i++)
+        {
+            string pict_src=camera.picture_src+"left-00"+to_string(i)+".png";//随图片格式改,0 start
+            //string pict_src=camera.picture_src+to_string(i+1)+".jpg";//随图片格式改
+            Mat p=imread(pict_src,IMREAD_COLOR);
+            //cout<<p.size()<<endl;
+            image_raw.push_back(p);//放入未标定图片
+        }
     }
 
  while(local_pict<camera.picture_number)//find picture chess corner
